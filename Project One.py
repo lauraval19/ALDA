@@ -23,7 +23,10 @@ import random
 
 
 def numbersInterval(initial,final):
-    """Selecting random ID of information about vehicles"""
+    """Selecting random ID of information about vehicles
+        returns:
+            int: random number
+    """
     data = np.random.randint(initial,final)
     return data
 
@@ -33,7 +36,9 @@ def numbersInterval(initial,final):
 
 def randomCountries():
     """Selecting random countries
-    return Country random selected"""
+        returns:
+            str: Country random selected
+    """
     myfile = open("countries.txt")
     txt = myfile.read()
     words = txt.split()
@@ -47,6 +52,8 @@ def randomCountries():
 def randomLicensePlate():
     """
     Generate random License Plate
+    returns:
+        str: license plate of vehicle
     """
     letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
     number = '0123456789'
@@ -60,6 +67,8 @@ def randomLicensePlate():
 def randomVehicleBrand():
     """
     Generate random vehicle Brand
+    return:
+        str: band of vehicle
     """
     myfile = open("car'sBands.txt")
     txt = myfile.read()
@@ -74,6 +83,8 @@ def randomVehicleBrand():
 def randomVehicleClassification():
     """
     Generate random Classification of vehicle
+    return:
+        str: vehicle category
     """
     vehicles = ['car','motorbike','bus','lorry','train','tram','underground']
     vehicles_position = random.randint(0, len(vehicles)-1)
@@ -86,6 +97,8 @@ def randomVehicleClassification():
 def randomYearVehicle():
     """
     Generate random year of model vehicle
+    return:
+        int: model year of car
     """
     year = np.random.randint(1990,2023)
     return year
@@ -97,6 +110,8 @@ def randomYearVehicle():
 def randomColor():
     """
     Generate random color vehicle
+    return:
+        str: color of car
     """
     myfile = open("colors.txt")
     txt = myfile.read()
@@ -111,6 +126,8 @@ def randomColor():
 def randomCylinder():
     """
     Generate random color vehicle
+    return:
+        int: value of cylinder capacity
     """
     cylinder = [125,150,180,200,250,300,50,500,600,800,80]
     cylinder_position = random.randint(0, len(cylinder)-1)
@@ -121,6 +138,11 @@ def randomCylinder():
 
 
 def randomFuel():
+     """
+    Generate fuel type of the vehicle
+    return:
+        str: fuel type
+    """
     fuels = ['Gasoline','Diesel','Bio-diesel','hybrid','electric']
     fuelposition = random.randint(0, len(fuels)-1)
     return fuels[fuelposition]
@@ -130,6 +152,11 @@ def randomFuel():
 
 
 def randomSwitch():
+     """
+    Generate value if the vehicle is imported 
+    return:
+        str: yes or not the vehicles is imported
+    """
     switch = ['yes','no']
     binary = random.randint(0, len(switch)-1)
     return switch[binary]
@@ -139,6 +166,11 @@ def randomSwitch():
 
 
 def randomService():
+    """
+    Generate value of service type
+    return:
+        str: service type between public or private
+    """
     services = ['Public','Private']
     service = random.randint(0, len(services)-1)
     return services[service]
@@ -148,6 +180,11 @@ def randomService():
 
 
 def randomTypeBox():
+    """
+        Generate Gearbox type of vehicle
+        return:
+            str: Gearbox type
+    """
     typeboxes = ['MT','AT','DSG']
     typebox = random.randint(0, len(typeboxes)-1)
     return typeboxes[typebox]
@@ -157,6 +194,11 @@ def randomTypeBox():
 
 
 def randomOwner():
+    """
+        Generate number of owner from names file
+        return:
+            str: owner name of vehicle
+    """
     namesfile = open("names.txt")
     readnames = namesfile.read()
     names = readnames.split()
@@ -168,6 +210,11 @@ def randomOwner():
 
 
 def randomAge():
+    """
+        Generate age of owner
+        return:
+            int: age of owner from 18 to 90
+    """
     return random.randint(18,90)
 
 
@@ -175,6 +222,11 @@ def randomAge():
 
 
 def randomEmail():
+    """
+        Generate owner's email
+        return:
+            str: owner's email
+    """
     num = randomAge()
     name = randomOwner()
     domains = ['oulook.com','gmail.com','hotmail.com']
@@ -186,6 +238,13 @@ def randomEmail():
 
 
 def randomID(size):
+    """
+        Generate ID of dataset
+        args:
+            number of dataset rows
+        return:
+            set: row identification of vehicle dataset
+    """
     minValue = 0;
     maxValue = size;
     set_id = set()
@@ -205,6 +264,13 @@ def randomID(size):
 
 
 def randomPhone(size):
+    """
+        Generate owner's phone
+        args:
+            number of dataset rows
+        return:
+            set: numbers of each owner of the dataset
+    """
     minValue = 0
     maxValue = 10;
     phone = []
@@ -223,6 +289,13 @@ def randomPhone(size):
 
 
 def randomIden(size):
+    """
+        Generate owner's ID
+        args:
+            number of dataset rows
+        return:
+            set: identification of each owner of the dataset
+    """
     minValue = 0
     maxValue = 10;
     ident_card = []
@@ -242,6 +315,8 @@ def randomIden(size):
 def randomSurnames():
     """
     Generate random surnames of owner
+    return:
+        str: last name of the owner
     """
     myfile = open("surnames.txt")
     txt = myfile.read()
@@ -254,13 +329,23 @@ def randomSurnames():
 
 
 def randomEngineSize():
+    """
+        Generate engine power size 
+        return:
+            set: engine power of vehicle
+    """
     return round(random.uniform(0.9,8.4), 1)
 
 
-# In[233]:
+# In[237]:
 
 
 def generateData(cant):
+    """
+        Create dataset with library pandas
+        return:
+            vehicle dataset
+    """
     df = pd.DataFrame(columns=['Country','License Plate','Vehicle Brand','Vehicle Classification','Year Vehicle','Color','CylinderCapacity (cc)','Fuel type','Imported',
                           'Service','Engine power (Kw)','Engine Size (L)','Gearbox type','Owner name','owner last name','Owner age','Owner' +"'s"+" email"])
     for i in range(cant):
@@ -271,13 +356,7 @@ def generateData(cant):
     return df
 
 
-# In[234]:
-
-
-generateData(10)
-
-
-# In[235]:
+# In[239]:
 
 
 def main():
@@ -285,7 +364,7 @@ def main():
     return generateData(amount)
 
 
-# In[236]:
+# In[240]:
 
 
 main()
