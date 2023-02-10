@@ -15,11 +15,14 @@ After that i pressed enter and the program return vehicles' dataset with two row
 
 | Name | Description |
 | --- | --- |
-| **Jupyter**  | List all new or modified files |
-| **Pandas** ![image](https://img.icons8.com/color/25/000000/git.png)|         |
-| **Git** ![Git](https://img.icons8.com/color/25/000000/git.png) | Sistema de control de versiones |
-| **Github** ![Github](https://img.icons8.com/windows/25/000000/github.png) | Respositorio del código fuente |
+| **Jupyter**|Project with goals to develop open-source software|
+| **Pandas** ![pandas](https://img.icons8.com/color/25/000000/pandas.png)| Pandas is a software library for data manipulation and analysis |
+| **Git** ![Git](https://img.icons8.com/color/25/000000/git.png) | Distributed version control system |
+| **Github** ![Github](https://img.icons8.com/windows/25/000000/github.png) | Source code repository |
 
+## Author :woman:
+
+### Laura Valentina Alvarado
 
 
 
