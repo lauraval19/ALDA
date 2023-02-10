@@ -39,7 +39,7 @@ def randomCountries():
         returns:
             str: Country random selected
     """
-    with open("countries.txt", 'r') as myfile:
+    with open("./TxtFiles/countries.txt", 'r') as myfile:
         txt = myfile.read()
         words = txt.split()
         word_position = random.randint(0, len(words)-1)
@@ -70,7 +70,7 @@ def randomVehicleBrand():
     return:
         str: band of vehicle
     """
-    with open("car'sBands.txt", 'r') as carsfile:
+    with open("./TxtFiles/car'sBands.txt", 'r') as carsfile:
         band_car = carsfile.read()
         bands = band_car.split()
         band_position = random.randint(0, len(bands)-1)
@@ -113,7 +113,7 @@ def randomColor():
     return:
         str: color of car
     """
-    with open("colors.txt", 'r') as colorfile:
+    with open("./TxtFiles/colors.txt", 'r') as colorfile:
         color_file = colorfile.read()
         colors = color_file.split()
         color_position = random.randint(0, len(colors)-1)
@@ -199,7 +199,7 @@ def randomOwner():
         return:
             str: owner name of vehicle
     """
-    with open("names.txt", 'r') as namesfile:
+    with open("./TxtFiles/names.txt", 'r') as namesfile:
         readnames = namesfile.read()
         names = readnames.split()
         names_position = random.randint(0, len(names)-1)
@@ -318,7 +318,7 @@ def randomSurnames():
     return:
         str: last name of the owner
     """
-    with open("surnames.txt",'r') as surnamefile:
+    with open("./TxtFiles/surnames.txt",'r') as surnamefile:
         surname_txt = surnamefile.read()
         surnames = surname_txt.split()
         lastname = random.randint(0, len(surnames)-1)
