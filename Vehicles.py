@@ -1,13 +1,13 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[23]:
+# In[241]:
 
 
 import pandas as pd
 
 
-# In[24]:
+# In[242]:
 
 
 import numpy as np
@@ -19,7 +19,7 @@ import numpy as np
 import random
 
 
-# In[26]:
+# In[244]:
 
 
 def numbersInterval(initial,final):
@@ -31,7 +31,7 @@ def numbersInterval(initial,final):
     return data
 
 
-# In[27]:
+# In[245]:
 
 
 def randomCountries():
@@ -39,14 +39,14 @@ def randomCountries():
         returns:
             str: Country random selected
     """
-    myfile = open("countries.txt")
-    txt = myfile.read()
-    words = txt.split()
-    word_position = random.randint(0, len(words)-1)
+    with open("countries.txt", 'r') as myfile:
+        txt = myfile.read()
+        words = txt.split()
+        word_position = random.randint(0, len(words)-1)
     return words[word_position]
 
 
-# In[28]:
+# In[246]:
 
 
 def randomLicensePlate():
@@ -61,7 +61,7 @@ def randomLicensePlate():
     return license_plate
 
 
-# In[29]:
+# In[247]:
 
 
 def randomVehicleBrand():
@@ -70,14 +70,14 @@ def randomVehicleBrand():
     return:
         str: band of vehicle
     """
-    myfile = open("car'sBands.txt")
-    txt = myfile.read()
-    bands = txt.split()
-    band_position = random.randint(0, len(bands)-1)
+    with open("car'sBands.txt", 'r') as carsfile:
+        band_car = carsfile.read()
+        bands = band_car.split()
+        band_position = random.randint(0, len(bands)-1)
     return bands[band_position]
 
 
-# In[30]:
+# In[248]:
 
 
 def randomVehicleClassification():
@@ -91,7 +91,7 @@ def randomVehicleClassification():
     return vehicles[vehicles_position]
 
 
-# In[31]:
+# In[249]:
 
 
 def randomYearVehicle():
@@ -104,7 +104,7 @@ def randomYearVehicle():
     return year
 
 
-# In[32]:
+# In[250]:
 
 
 def randomColor():
@@ -113,14 +113,14 @@ def randomColor():
     return:
         str: color of car
     """
-    myfile = open("colors.txt")
-    txt = myfile.read()
-    colors = txt.split()
-    color_position = random.randint(0, len(colors)-1)
+    with open("colors.txt", 'r') as colorfile:
+        color_file = colorfile.read()
+        colors = color_file.split()
+        color_position = random.randint(0, len(colors)-1)
     return colors[color_position]
 
 
-# In[33]:
+# In[251]:
 
 
 def randomCylinder():
@@ -134,11 +134,11 @@ def randomCylinder():
     return cylinder[cylinder_position]
 
 
-# In[34]:
+# In[252]:
 
 
 def randomFuel():
-     """
+    """
     Generate fuel type of the vehicle
     return:
         str: fuel type
@@ -148,11 +148,11 @@ def randomFuel():
     return fuels[fuelposition]
 
 
-# In[35]:
+# In[253]:
 
 
 def randomSwitch():
-     """
+    """
     Generate value if the vehicle is imported 
     return:
         str: yes or not the vehicles is imported
@@ -162,7 +162,7 @@ def randomSwitch():
     return switch[binary]
 
 
-# In[36]:
+# In[254]:
 
 
 def randomService():
@@ -176,7 +176,7 @@ def randomService():
     return services[service]
 
 
-# In[37]:
+# In[255]:
 
 
 def randomTypeBox():
@@ -190,7 +190,7 @@ def randomTypeBox():
     return typeboxes[typebox]
 
 
-# In[38]:
+# In[256]:
 
 
 def randomOwner():
@@ -199,14 +199,14 @@ def randomOwner():
         return:
             str: owner name of vehicle
     """
-    namesfile = open("names.txt")
-    readnames = namesfile.read()
-    names = readnames.split()
-    names_position = random.randint(0, len(names)-1)
+    with open("names.txt", 'r') as namesfile:
+        readnames = namesfile.read()
+        names = readnames.split()
+        names_position = random.randint(0, len(names)-1)
     return names[names_position]
 
 
-# In[39]:
+# In[257]:
 
 
 def randomAge():
@@ -218,7 +218,7 @@ def randomAge():
     return random.randint(18,90)
 
 
-# In[40]:
+# In[258]:
 
 
 def randomEmail():
@@ -234,7 +234,7 @@ def randomEmail():
     return name + str(num) + '@' + domains[domain_position]
 
 
-# In[103]:
+# In[259]:
 
 
 def randomID(size):
@@ -260,7 +260,7 @@ def randomID(size):
     return set_id
 
 
-# In[183]:
+# In[260]:
 
 
 def randomPhone(size):
@@ -285,7 +285,7 @@ def randomPhone(size):
     return set_id
 
 
-# In[206]:
+# In[261]:
 
 
 def randomIden(size):
@@ -309,7 +309,7 @@ def randomIden(size):
     return set_ident
 
 
-# In[223]:
+# In[265]:
 
 
 def randomSurnames():
@@ -318,14 +318,14 @@ def randomSurnames():
     return:
         str: last name of the owner
     """
-    myfile = open("surnames.txt")
-    txt = myfile.read()
-    surnames = txt.split()
-    lastname = random.randint(0, len(surnames)-1)
+    with open("surnames.txt",'r') as surnamefile:
+        surname_txt = surnamefile.read()
+        surnames = surname_txt.split()
+        lastname = random.randint(0, len(surnames)-1)
     return surnames[lastname]. lower()
 
 
-# In[231]:
+# In[263]:
 
 
 def randomEngineSize():
@@ -337,7 +337,7 @@ def randomEngineSize():
     return round(random.uniform(0.9,8.4), 1)
 
 
-# In[237]:
+# In[264]:
 
 
 def generateData(cant):
