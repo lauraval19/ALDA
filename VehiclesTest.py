@@ -1,21 +1,11 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[110]:
-
-
+# %%
 import unittest
 
+# %%
+#from Vehicles import numbersInterval,randomCountries,randomLicensePlate,randomVehicleBrand,randomVehicleClassification,randomYearVehicle,randomColor,randomCylinder,randomFuel,randomSwitch,randomService,randomTypeBox,randomOwner,randomAge,randomEmail,randomID,randomPhone,randomIden,randomSurnames,randomEngineSize
 
-# In[111]:
-
-
-from Vehicles import numbersInterval,randomCountries,randomLicensePlate,randomVehicleBrand,randomVehicleClassification,randomYearVehicle,randomColor,randomCylinder,randomFuel,randomSwitch,randomService,randomTypeBox,randomOwner,randomAge,randomEmail,randomID,randomPhone,randomIden,randomSurnames,randomEngineSize
-
-
-# In[112]:
-
-
+from Vehicles import *
+# %%
 class TestVehiclesdataset(unittest.TestCase):
     
     
@@ -74,9 +64,6 @@ class TestVehiclesdataset(unittest.TestCase):
         fuels = ['Gasoline','Diesel','Bio-diesel','hybrid','electric']
         self.assertIn(randomFuel(),fuels)
         
-    def test_randomNotFuel(self):
-        fuels = ['Gasolines','Dies','Bidiesel','electric']
-        self.assertNotIn(randomFuel(),fuels)
         
     def test_randomSwitch(self):
         imported = ['yes','no']
@@ -128,7 +115,7 @@ class TestVehiclesdataset(unittest.TestCase):
         self.assertEqual(len(randomIden(2)),2)
     
     def test_randomIden(self):
-        identi= randomIden(2) 
+        identi= randomIden(2)
         self.assertEqual(len(list(identi)[0]),10)
         
     def test_randomSurnames(self):
@@ -141,21 +128,14 @@ class TestVehiclesdataset(unittest.TestCase):
         self.assertGreater(randomEngineSize(), 0.9)
         
 
+# %%
+if __name__ == "__main__":
+    unittest.main()
 
-# In[113]:
-
-
-unittest.main(argv=[''], verbosity=2, exit=False)
-
-
-# In[ ]:
+# %%
 
 
-
-
-
-# In[ ]:
-
+# %%
 
 
 
